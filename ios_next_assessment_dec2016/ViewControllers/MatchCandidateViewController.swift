@@ -9,12 +9,6 @@
 import UIKit
 import Firebase
 
-class FirebaseHelper {
-    static let auth = FIRAuth.auth()
-    
-    static let helper : FirebaseHelper = FirebaseHelper()
-}
-
 class MatchCandidateViewController: UIViewController {
 
     override func viewDidLoad() {

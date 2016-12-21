@@ -274,7 +274,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="ageLabel" destination="94N-nP-KtM" id="h1P-eZ-KQL"/>
+                        <outlet property="emailLabel" destination="xYB-VQ-usR" id="ovT-f2-gPr"/>
+                        <outlet property="genderLabel" destination="z3c-qS-gVW" id="LzV-tD-0mq"/>
                         <outlet property="logOutButton" destination="Raf-km-jA1" id="Wll-HQ-AC3"/>
+                        <outlet property="nameLabel" destination="1M8-ko-tFV" id="Bca-7F-bCm"/>
+                        <outlet property="notesLabel" destination="7a3-aa-slS" id="YCR-8a-e5k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOp-sK-BI5" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -13,6 +13,13 @@ class profileViewController: UIViewController {
 
     @IBOutlet weak var logOutButton: UIButton!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var notesLabel: UILabel!
+    
+    
     var profile = Profile()
     
     let user = FIRAuth.auth()?.currentUser
@@ -27,6 +34,7 @@ class profileViewController: UIViewController {
         storageRef = storage.reference(forURL: "gs://ios-next-assessment-dec2016.appspot.com")
 
         fetchUser()
+        setProfile()
         // Do any additional setup after loading the view.
     }
     
@@ -35,8 +43,22 @@ class profileViewController: UIViewController {
             if let dictionary = snapshot.value as? [String:AnyObject] {
                 print("\(dictionary)")
                 
+                self.profile.name = (dictionary["name"] as! String?)!
+                self.profile.age = (dictionary["age"] as! String?)!
+                self.profile.notes = (dictionary["notes"] as! String?)!
+                self.profile.email = (dictionary["email"] as! String?)!
+                self.profile.gender = (dictionary["gender"] as! String?)!
+                
             }
         })
+    }
+    
+    func setProfile() {
+        self.nameLabel.text = self.profile.name
+        self.ageLabel.text = self.profile.age
+        self.notesLabel.text = self.profile.notes
+        self.emailLabel.text = self.profile.email
+        self.genderLabel.text = self.profile.gender
     }
     
     @IBAction func didTapLogOutButton(_ sender: Any) {

@@ -15,6 +15,6 @@ class Profile{
     var name = ""
     var age = ""
     var gender = ""
-    var desciption = ""
+    var notes = ""
     var email = ""
 }

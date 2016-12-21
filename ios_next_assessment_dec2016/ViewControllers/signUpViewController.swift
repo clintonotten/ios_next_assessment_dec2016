@@ -27,6 +27,8 @@ class signUpViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var profilePictureImage: UIImageView!
     
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
     var ref : FIRDatabaseReference!
     let storage = FIRStorage.storage()
     var storageRef : FIRStorageReference!
@@ -42,7 +44,7 @@ class signUpViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBAction func didTapCreateAccountButton(_ sender: Any) {
         
-        if let email = self.emailSignUpTextField.text, let password = self.passwordSignUpTextField.text, let name = self.nameTextField.text, let age = self.ageTextField.text, let gender = self.genderTextField.text {
+        if let email = self.emailSignUpTextField.text, let password = self.passwordSignUpTextField.text, let name = self.nameTextField.text, let age = self.ageTextField.text, let gender = self.genderTextField.text, let notes = self.descriptionTextView.text {
             
             FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                 
@@ -60,7 +62,7 @@ class signUpViewController: UIViewController, UINavigationControllerDelegate {
                 self.notifySuccessfulSignUp()
                 print("Successful SingUp")
                 
-                self.ref.child("users").child((user?.uid)!).setValue(["email" : email, "name" : name, "age" : age, "gender": gender])
+                self.ref.child("users").child((user?.uid)!).setValue(["email" : email, "name" : name, "age" : age, "gender": gender, "notes": notes])
                 
                 if self.profilePictureImage.image != nil {
                 self.uploadPicture()
