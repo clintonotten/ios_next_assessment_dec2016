@@ -12,7 +12,8 @@
 		ABF964551E0A1DF900CF9FDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF964531E0A1DF900CF9FDB /* LaunchScreen.storyboard */; };
 		ABF9645D1E0A1E5800CF9FDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABF9645C1E0A1E5800CF9FDB /* GoogleService-Info.plist */; };
 		ABF9645F1E0A20B500CF9FDB /* Login Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF9645E1E0A20B500CF9FDB /* Login Screen.storyboard */; };
-		ABF964641E0A213C00CF9FDB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF964631E0A213C00CF9FDB /* FirstViewController.swift */; };
+		ABF964661E0A229500CF9FDB /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF964651E0A229500CF9FDB /* loginViewController.swift */; };
+		ABF964681E0A273E00CF9FDB /* Extensins.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF964671E0A273E00CF9FDB /* Extensins.swift */; };
 		FE07D653AE3039C7D766CF20 /* Pods_ios_next_assessment_dec2016.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C88C9B8BD922F99C82B74B /* Pods_ios_next_assessment_dec2016.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +25,8 @@
 		ABF964561E0A1DF900CF9FDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABF9645C1E0A1E5800CF9FDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABF9645E1E0A20B500CF9FDB /* Login Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Login Screen.storyboard"; path = "Storyboards/Login Screen.storyboard"; sourceTree = "<group>"; };
-		ABF964631E0A213C00CF9FDB /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = ViewControllers/FirstViewController.swift; sourceTree = "<group>"; };
+		ABF964651E0A229500CF9FDB /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = loginViewController.swift; path = ViewControllers/loginViewController.swift; sourceTree = "<group>"; };
+		ABF964671E0A273E00CF9FDB /* Extensins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensins.swift; sourceTree = "<group>"; };
 		B6C88C9B8BD922F99C82B74B /* Pods_ios_next_assessment_dec2016.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_next_assessment_dec2016.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E905C013DB8A1D1E4AD42C96 /* Pods-ios_next_assessment_dec2016.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_next_assessment_dec2016.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios_next_assessment_dec2016/Pods-ios_next_assessment_dec2016.debug.xcconfig"; sourceTree = "<group>"; };
 		FA151D2C3ECB14480E8B2292 /* Pods-ios_next_assessment_dec2016.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_next_assessment_dec2016.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios_next_assessment_dec2016/Pods-ios_next_assessment_dec2016.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF9644A1E0A1DF900CF9FDB /* AppDelegate.swift */,
+				ABF964671E0A273E00CF9FDB /* Extensins.swift */,
 				ABF964511E0A1DF900CF9FDB /* Assets.xcassets */,
 				ABF964621E0A20DA00CF9FDB /* Views */,
 				ABF964611E0A20C400CF9FDB /* ViewControllers */,
@@ -94,7 +97,7 @@
 		ABF964611E0A20C400CF9FDB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				ABF964631E0A213C00CF9FDB /* FirstViewController.swift */,
+				ABF964651E0A229500CF9FDB /* loginViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -240,8 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF964661E0A229500CF9FDB /* loginViewController.swift in Sources */,
 				ABF9644B1E0A1DF900CF9FDB /* AppDelegate.swift in Sources */,
-				ABF964641E0A213C00CF9FDB /* FirstViewController.swift in Sources */,
+				ABF964681E0A273E00CF9FDB /* Extensins.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
+        
+        observeAuthNotification()
+
         return true
     }
 
@@ -45,4 +48,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+extension AppDelegate{
+    func observeAuthNotification(){
+        NotificationCenter.default.addObserver(self, selector: #selector(handleAuthNotification(_ :)), name: Notification.Name(rawValue:"AuthSuccessNotification"), object: nil)
+    }
+    
+    func handleAuthNotification(_ notification : Notification){
+        //this part will only be called if user successfuly logged in
+        //self.checkLoadPage(storyboard: "RentFeed", controllername: "RentFeedViewController")
+    }
+    
+    func checkLoadPage(storyboard : String, controllername : String){
+        let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: controllername)
+        self.window?.rootViewController = controller
+    }
+}
+
 
