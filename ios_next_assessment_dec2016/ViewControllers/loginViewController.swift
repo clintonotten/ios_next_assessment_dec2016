@@ -30,48 +30,73 @@ class loginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func notifySuccessLogin(){
+    
+    @IBAction func didTapLoginButton(_ sender: Any) {
+        if let email = self.emailTextField.text, let password = self.passwordTextField.text {
+            
+            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+                
+                self.startSpinning()
+                
+                if error != nil{
+                    print("Login Failed")
+                    print("\(error)")
+                    self.stopSpinning()
+                    
+                    AlertController.alertPopUp(viewController: self, titleMsg: "Login Error", message: "Incorrect email or password", cancelMsg: "Ok")
+                    
+                    return
+                }
+                
+                guard user != nil else{ return }
+                
+                self.notifySuccessLogin()
+                self.stopSpinning()
+                print("Successful login")
+            
+                })
+        } else {
+            print("Email or Password can't be empty")
+            self.stopSpinning()
+            }
         
+    }
+    
+}
+extension loginViewController : UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if text.isEmpty {
+            self.loginButton.isUserInteractionEnabled = false
+        } else {
+            self.loginButton.isUserInteractionEnabled = true
+        }
+    }
+}
+extension loginViewController {
+    
+    func notifySuccessLogin(){
         //create notification
         let authSuccessNoification = Notification(name: Notification.Name(rawValue:"AuthSuccessNotification"))
         
         // post notification
         NotificationCenter.default.post(authSuccessNoification)
     }
-
-    @IBAction func didTapLoginButton(_ sender: Any) {
-        if let email = self.emailTextField.text, let password = self.passwordTextField.text {
-            
-            spinner.isHidden = false
-            spinner.startAnimating()
-            
-            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-                
-                if let error = error{
-                    print("Login Failed")
-                    
-                    return
-                }
-                
-                guard let firUser = user else{ return }
-                
-                self.notifySuccessLogin()
-                
-                print("Successful login")
-            
-                })
-        } else {
-            print("Email or Password can't be empty")
-            
-            }
-        
+    
+    //Spinner Animations
+    
+    func startSpinning() {
+        spinner.isHidden = false
+        spinner.startAnimating()
     }
     
+    func stopSpinning() {
+        spinner.isHidden = true
+        spinner.stopAnimating()
+    }
     
+    // Check if textfield is empty
     
-    
-    
-    
-    
-    
+//    func isTextFieldEmpty() {
+//        if se
+//    }
 }

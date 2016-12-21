@@ -14,6 +14,7 @@
 		ABF9645F1E0A20B500CF9FDB /* Login Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF9645E1E0A20B500CF9FDB /* Login Screen.storyboard */; };
 		ABF964661E0A229500CF9FDB /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF964651E0A229500CF9FDB /* loginViewController.swift */; };
 		ABF964681E0A273E00CF9FDB /* Extensins.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF964671E0A273E00CF9FDB /* Extensins.swift */; };
+		ABF9646A1E0A32EF00CF9FDB /* Sign Up.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF964691E0A32EF00CF9FDB /* Sign Up.storyboard */; };
 		FE07D653AE3039C7D766CF20 /* Pods_ios_next_assessment_dec2016.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C88C9B8BD922F99C82B74B /* Pods_ios_next_assessment_dec2016.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		ABF9645E1E0A20B500CF9FDB /* Login Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Login Screen.storyboard"; path = "Storyboards/Login Screen.storyboard"; sourceTree = "<group>"; };
 		ABF964651E0A229500CF9FDB /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = loginViewController.swift; path = ViewControllers/loginViewController.swift; sourceTree = "<group>"; };
 		ABF964671E0A273E00CF9FDB /* Extensins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensins.swift; sourceTree = "<group>"; };
+		ABF964691E0A32EF00CF9FDB /* Sign Up.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Sign Up.storyboard"; path = "Storyboards/Sign Up.storyboard"; sourceTree = "<group>"; };
 		B6C88C9B8BD922F99C82B74B /* Pods_ios_next_assessment_dec2016.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_next_assessment_dec2016.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E905C013DB8A1D1E4AD42C96 /* Pods-ios_next_assessment_dec2016.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_next_assessment_dec2016.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios_next_assessment_dec2016/Pods-ios_next_assessment_dec2016.debug.xcconfig"; sourceTree = "<group>"; };
 		FA151D2C3ECB14480E8B2292 /* Pods-ios_next_assessment_dec2016.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_next_assessment_dec2016.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios_next_assessment_dec2016/Pods-ios_next_assessment_dec2016.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF9645E1E0A20B500CF9FDB /* Login Screen.storyboard */,
+				ABF964691E0A32EF00CF9FDB /* Sign Up.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			files = (
 				ABF964551E0A1DF900CF9FDB /* LaunchScreen.storyboard in Resources */,
 				ABF9645D1E0A1E5800CF9FDB /* GoogleService-Info.plist in Resources */,
+				ABF9646A1E0A32EF00CF9FDB /* Sign Up.storyboard in Resources */,
 				ABF964521E0A1DF900CF9FDB /* Assets.xcassets in Resources */,
 				ABF9645F1E0A20B500CF9FDB /* Login Screen.storyboard in Resources */,
 			);
