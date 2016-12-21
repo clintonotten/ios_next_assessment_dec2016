@@ -1,5 +1,5 @@
 //
-//  detailsViewController.swift
+//  MatchCandidateViewController.swift
 //  ios_next_assessment_dec2016
 //
 //  Created by Clinton Otten on 21/12/2016.
@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
-class detailsViewController: UIViewController {
+class FirebaseHelper {
+    static let auth = FIRAuth.auth()
+    
+    static let helper : FirebaseHelper = FirebaseHelper()
+}
+
+class MatchCandidateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

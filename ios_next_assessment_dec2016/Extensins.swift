@@ -19,3 +19,12 @@ class AlertController{
         viewController.present(alertController, animated : true, completion:nil)
     }
 }
+
+extension UIViewController {
+    
+    func QuickPresent(storyboard : String, controllername : String) {
+        let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: controllername)
+        present(controller, animated: true, completion: nil)
+}
+}
