@@ -22,22 +22,22 @@ class MatchCandidateViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    func fetchMatches {
-        ref.child("users").observeSingleEvent(of: .value , with: {(snapshot) in
-            if let dictionary = snapshot.value as? [String:AnyObject] {
-                print("\(dictionary)")
-                
-                self.profile.name = (dictionary["name"] as! String?)!
-                self.profile.age = (dictionary["age"] as! String?)!
-                self.profile.notes = (dictionary["notes"] as! String?)!
-                self.profile.email = (dictionary["email"] as! String?)!
-                self.profile.gender = (dictionary["gender"] as! String?)!
-                self.profile.pic = (dictionary["profilepic"] as! String?)!
-                
-                self.setProfile()
-            }
-        })
-    }
+//    func fetchMatches {
+//        ref.child("users").observeSingleEvent(of: .value , with: {(snapshot) in
+//            if let dictionary = snapshot.value as? [String:AnyObject] {
+//                print("\(dictionary)")
+//                
+//                self.profile.name = (dictionary["name"] as! String?)!
+//                self.profile.age = (dictionary["age"] as! String?)!
+//                self.profile.notes = (dictionary["notes"] as! String?)!
+//                self.profile.email = (dictionary["email"] as! String?)!
+//                self.profile.gender = (dictionary["gender"] as! String?)!
+//                self.profile.pic = (dictionary["profilepic"] as! String?)!
+//                
+//                self.setProfile()
+//            }
+//        })
+//    }
 
     
 
