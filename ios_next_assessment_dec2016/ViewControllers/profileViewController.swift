@@ -30,7 +30,7 @@ class profileViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let signUpController = segue.destination as! signUpViewController
-        signUpController.editProfile()
+//        signUpController.editProfile()
     }
     
     override func viewDidLoad() {
