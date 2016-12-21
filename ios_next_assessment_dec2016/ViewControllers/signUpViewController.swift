@@ -29,16 +29,43 @@ class signUpViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    var profile = Profile()
+    
+    let user = FIRAuth.auth()?.currentUser
     var ref : FIRDatabaseReference!
     let storage = FIRStorage.storage()
     var storageRef : FIRStorageReference!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = FIRDatabase.database().reference()
         storageRef = storage.reference(forURL: "gs://ios-next-assessment-dec2016.appspot.com")
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func editProfile(){
+        
+        ref.child("users").child((user?.uid)!).observeSingleEvent(of: .value , with: {(snapshot) in
+            if let dictionary = snapshot.value as? [String:AnyObject] {
+                print("\(dictionary)")
+                
+                self.profile.name = (dictionary["name"] as! String?)!
+                self.profile.age = (dictionary["age"] as! String?)!
+                self.profile.notes = (dictionary["notes"] as! String?)!
+                self.profile.email = (dictionary["email"] as! String?)!
+                self.profile.gender = (dictionary["gender"] as! String?)!
+                self.profile.pic = (dictionary["profilepic"] as! String?)!
+            }
+        })
+        
+        self.nameTextField.text = self.profile.name
+        self.ageTextField.text = self.profile.age
+        self.descriptionTextView.text = self.profile.notes
+        self.emailSignUpTextField.text = self.profile.email
+        self.genderTextField.text = self.profile.gender
     }
     
     
@@ -72,9 +99,6 @@ class signUpViewController: UIViewController, UINavigationControllerDelegate {
             print("Incomplete email or Password")
             
             }
-        
-        
-        
     }
     
         

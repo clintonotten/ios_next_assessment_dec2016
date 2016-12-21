@@ -11,7 +11,7 @@ import UIKit
 
 class Profile{
     
-    var pic = UIImage()
+    var pic = ""
     var name = ""
     var age = ""
     var gender = ""

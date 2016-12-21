@@ -19,6 +19,7 @@ class profileViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var notesLabel: UILabel!
     
+    @IBOutlet weak var profilePic: UIImageView!
     
     var profile = Profile()
     
@@ -27,6 +28,11 @@ class profileViewController: UIViewController {
     let storage = FIRStorage.storage()
     var storageRef : FIRStorageReference!
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let signUpController = segue.destination as! signUpViewController
+        signUpController.editProfile()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +40,7 @@ class profileViewController: UIViewController {
         storageRef = storage.reference(forURL: "gs://ios-next-assessment-dec2016.appspot.com")
 
         fetchUser()
-        setProfile()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -48,7 +54,9 @@ class profileViewController: UIViewController {
                 self.profile.notes = (dictionary["notes"] as! String?)!
                 self.profile.email = (dictionary["email"] as! String?)!
                 self.profile.gender = (dictionary["gender"] as! String?)!
+                self.profile.pic = (dictionary["profilepic"] as! String?)!
                 
+                self.setProfile()
             }
         })
     }
@@ -59,6 +67,7 @@ class profileViewController: UIViewController {
         self.notesLabel.text = self.profile.notes
         self.emailLabel.text = self.profile.email
         self.genderLabel.text = self.profile.gender
+        self.profilePic.downloadedFrom(link: self.profile.pic)
     }
     
     @IBAction func didTapLogOutButton(_ sender: Any) {
@@ -74,8 +83,9 @@ class profileViewController: UIViewController {
     }
     
     @IBAction func didTapUpdateProfileButton(_ sender: Any) {
-
+        
         QuickPresent(storyboard: "Main", controllername: "signUp")
+        
     }
 
     
