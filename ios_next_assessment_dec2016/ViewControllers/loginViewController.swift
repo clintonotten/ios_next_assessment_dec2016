@@ -40,7 +40,7 @@ class loginViewController: UIViewController {
                 
                 if error != nil{
                     print("Login Failed")
-                    print("\(error)")
+                    print("\(error?.localizedDescription)")
                     self.stopSpinning()
                     
                     AlertController.alertPopUp(viewController: self, titleMsg: "Login Error", message: "Incorrect email or password", cancelMsg: "Ok")
@@ -63,15 +63,7 @@ class loginViewController: UIViewController {
     }
     
 }
-extension loginViewController : UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if text.isEmpty {
-            self.loginButton.isUserInteractionEnabled = false
-        } else {
-            self.loginButton.isUserInteractionEnabled = true
-        }
-    }
-}
+
 extension loginViewController {
     
     func notifySuccessLogin(){
@@ -100,3 +92,14 @@ extension loginViewController {
 //        if se
 //    }
 }
+
+//extension loginViewController : UITextFieldDelegate {
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        if !text.isEmpty {
+//            self.loginButton.isUserInteractionEnabled = false
+//        } else {
+//            self.loginButton.isUserInteractionEnabled = true
+//        }
+//    }
+//}
+
